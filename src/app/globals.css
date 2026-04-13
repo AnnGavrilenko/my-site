@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 270 30% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 270 30% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 270 30% 15%;
+    --primary: 270 35% 35%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 185 75% 55%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 270 10% 96%;
+    --muted-foreground: 270 10% 45%;
+    --accent: 32 70% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 270 10% 90%;
+    --input: 270 10% 90%;
+    --ring: 270 35% 35%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Custom Beltelecom styles */
+.purple-gradient {
+  background: linear-gradient(135deg, #593c7d 0%, #7b5a9e 100%);
+}
+
+.nav-link {
+  @apply relative text-white/90 hover:text-white transition-colors px-4 py-2;
+}
+
+.nav-link.active {
+  @apply bg-white/10 text-white;
+}
+
+.service-nav {
+  background: linear-gradient(90deg, #593c7d 0%, #7b5a9e 50%, #35cbe0 100%);
+}
+
+.btn-primary {
+  @apply bg-[#593c7d] hover:bg-[#6b4a94] text-white px-4 py-2 rounded transition-colors;
+}
+
+.btn-outline {
+  @apply border border-[#593c7d] text-[#593c7d] hover:bg-[#593c7d] hover:text-white px-4 py-2 rounded transition-colors;
+}
+
+/* Hero carousel styles */
+.hero-slide {
+  @apply relative min-h-[400px] bg-gradient-to-br from-white to-gray-50;
+}
+
+/* News card hover effect */
+.news-card {
+  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+}
+
+/* Footer styles */
+.footer-section {
+  @apply bg-[#593c7d] text-white;
+}
+
+.footer-link {
+  @apply text-white/80 hover:text-white transition-colors text-sm;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #593c7d;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7b5a9e;
+}
+
+/* Animation classes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Brand grid */
+.brand-grid {
+  @apply grid grid-cols-3 md:grid-cols-6 lg:grid-cols-9 gap-8 items-center;
+}
+
+/* Cookie banner */
+.cookie-banner {
+  @apply fixed bottom-0 left-0 right-0 bg-[#593c7d]/95 text-white p-4 z-50;
+}
